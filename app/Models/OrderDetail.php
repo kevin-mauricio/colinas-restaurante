@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Categoria extends Model
+class OrderDetail extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'nombre_categoria',
-        'descripcion_categoria' 
-    ];
+
+    public function orders() {
+        return $this->belongsToMany(Order::class);
+    }
 
     public function platos() {
-        return $this->hasMany(Plato::class);
+        return $this->belongsToMany(Plato::class);
     }
 }

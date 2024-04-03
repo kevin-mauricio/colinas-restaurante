@@ -10,9 +10,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{{route('index')}}">Home</a></li>
-          <li><a href="{{route('index_category')}}">Categories</a></li>
-          <li><a href="{{route('index_plate')}}">Menu</a></li>
+{{--           @php
+              $active = isset($nav_status) ? 'active' : '';
+          @endphp --}}
+          <li><a href="{{route('index')}}"  {{-- class="{{$active}} --}}">Home</a></li>
+          <li><a href="{{route('index_category')}}" {{-- class="{{$active}} --}}">Categories</a></li>
+          <li><a href="{{route('index_plate')}}" {{-- class="{{$active}} --}}">Menu</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#chefs">Chefs</a></li>
           <li><a href="#gallery">Gallery</a></li>

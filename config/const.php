@@ -1,4 +1,4 @@
 <?php
 return [
-    "rootCategories" => "layouts.categories"
+    "nav_status" => "active"
 ];

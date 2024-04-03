@@ -37,16 +37,16 @@
                                         {{ $key + 1 }}
                                     </td>
                                     <td class="text-start">
-                                        <a class="text-dark"
+                                        <a class="text-dark" title="info"
                                             href="{{ route('show_category', $category->id) }}">{{ $category->nombre_categoria }}</a>
                                     </td>
                                     <td>
-                                        <button class="btn btn-light"><a
+                                        <button class="btn btn-light"><a title="EDIT"
                                                 href="{{ route('edit_category', $category->id) }}" class="text-dark"><i
                                                     class="bi bi-pencil-square"></i></a></button>
                                     </td>
                                     <td>
-                                        <button onclick="" type="submit" class="btn btn-light"
+                                        <button title="DELETE" type="submit" class="btn btn-light"
                                             data-bs-toggle="modal" data-bs-target="#idModalDelete"><i
                                                 class="bi bi-trash"></i></button>
                                     </td>
@@ -82,7 +82,7 @@
                 Are you sure?
             </div>
             <div class="modal-footer">
-                <form method="POST" action="{{ route('delete_category', $category->id) }}">
+                <form method="POST" action="{{ isset($category) ? route('delete_category', $category->id) : "" }}">
                     @method('DELETE')
                     @csrf
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>

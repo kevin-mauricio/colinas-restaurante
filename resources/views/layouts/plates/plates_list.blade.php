@@ -94,11 +94,10 @@
                 </div>
             </div>
         @else
-            <div class="col-lg-4 menu-item mx-auto">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
-                        src="{{ asset('assets/img/menu/menu-item-1.png') }}" class="menu-img img-fluid"
-                        alt=""></a>
-                <h2 class="text-center p-3">No plates added</h2>
+            <div class="col-lg-4 menu-item text-center m-auto pt-3">
+                <img src="{{ asset('assets/img/empty-plate.jpg') }}" class="menu-img img-fluid w-75"
+                    alt="no-plate">
+                <h2 class="p-3">No plates added</h2>
             </div><!-- Menu Item -->
         @endif
     </div>
@@ -116,7 +115,7 @@
                 Are you sure?
             </div>
             <div class="modal-footer">
-                <form method="POST" action="{{ route('delete_plate', $plate->id) }}">
+                <form method="POST" action="{{ isset($plate) ? route('delete_plate', $plate->id) : '' }}">
                     @method('DELETE')
                     @csrf
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>

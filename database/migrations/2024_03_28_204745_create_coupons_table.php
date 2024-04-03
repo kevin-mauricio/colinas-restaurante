@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pedidos_clientes', function (Blueprint $table) {
+        Schema::create('coupons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("id_pedido");
-            $table->unsignedBigInteger("id_plato");
+            $table->string('code');
+            $table->boolean('status')->default(true);
+            $table->float('porcentaje', 3, 2);
             $table->timestamps();
-
-            $table->foreign('id_plato')->references('id')->on('platos');
-            $table->foreign('id_pedido')->references('id')->on('pedidos');
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pedidos_clientes');
+        Schema::dropIfExists('coupons');
     }
 };

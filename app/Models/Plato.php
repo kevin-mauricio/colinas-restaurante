@@ -15,4 +15,8 @@ class Plato extends Model
         'precio',
         'costo'
     ];
+
+    public function categorias() {
+        return $this->belongsTo(Categoria::class);
+    }
 }
