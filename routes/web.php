@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PlatoController;
 
@@ -41,3 +42,8 @@ Route::get('/plates-by-category/{id_category}', [PlatoController::class, 'getPla
 Route::put('/update-plate/{plate}', [PlatoController::class, 'update'])->name('update_plate');
 Route::get('/edit-plate/{plate}', [PlatoController::class, 'edit'])->name('edit_plate');
 Route::delete('/delete-plate/{plate}', [PlatoController::class, 'destroy'])->name('delete_plate');
+
+/* CouponController */
+Route::get('/coupons', [CouponController::class, 'index'])->name('index_coupon');
+Route::post('/store-coupon', [CouponController::class, 'store'])->name('store_coupon');
+Route::get('/update_status/{id}', [CouponController::class, 'updateStatus'])->name('update_status');

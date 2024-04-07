@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code', 50);
             $table->boolean('status')->default(true);
             $table->float('porcentaje', 3, 2);
             $table->timestamps();
