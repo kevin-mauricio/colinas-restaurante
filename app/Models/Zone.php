@@ -9,6 +9,11 @@ class Zone extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'zone_name',
+        'price_delivery'
+    ];
+
     public function orders() {
         return $this->hasMany(Order::class);
     }

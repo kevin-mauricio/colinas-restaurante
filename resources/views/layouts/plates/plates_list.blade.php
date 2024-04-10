@@ -3,7 +3,7 @@
     <div class="container p-3" data-aos="fade-up">
         @if ($alert = Session::get('alert'))
             <div class="row text-center">
-                <p class="text-{{ $alert['color'] }} fs-1">
+                <p class="text-{{ strtoupper($alert['color']) }} fs-5">
                     {{ $alert['message'] }}
                 </p>
             </div>

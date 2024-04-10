@@ -17,7 +17,7 @@
                   <li><a href="{{ route('index_category') }}" {{-- class="{{$active}} --}}">Categories</a></li>
                   <li><a href="{{ route('index_plate') }}" {{-- class="{{$active}} --}}">Menu</a></li>
                   <li><a href="{{ route('index_coupon') }}">Coupons</a></li>
-                  <li><a href="#chefs">Chefs</a></li>
+                  <li><a href="{{ route('index_zone') }}">Delivery Zones</a></li>
                   <li><a href="#gallery">Gallery</a></li>
                   <li class="dropdown"><a href="#"><span>Drop Down</span> <i
                               class="bi bi-chevron-down dropdown-indicator"></i></a>

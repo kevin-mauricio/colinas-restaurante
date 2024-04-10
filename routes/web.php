@@ -5,7 +5,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PlatoController;
-
+use App\Http\Controllers\ZoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +47,9 @@ Route::delete('/delete-plate/{plate}', [PlatoController::class, 'destroy'])->nam
 Route::get('/coupons', [CouponController::class, 'index'])->name('index_coupon');
 Route::post('/store-coupon', [CouponController::class, 'store'])->name('store_coupon');
 Route::get('/update_status/{id}', [CouponController::class, 'updateStatus'])->name('update_status');
+Route::delete('/delete-coupon/{coupon}', [CouponController::class, 'destroy'])->name('delete_coupon');
+
+/* ZoneController */
+Route::get('/zones', [ZoneController::class, 'index'])->name('index_zone');
+Route::post('/store-zone', [ZoneController::class, 'store'])->name('store_zone');
+Route::delete('/delete-zone/{zone}', [ZoneController::class, 'destroy'])->name('delete_zone');

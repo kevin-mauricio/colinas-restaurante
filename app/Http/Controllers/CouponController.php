@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CouponRequest;
 use Illuminate\Http\Request;
 use App\Models\Coupon;
+
+use function Laravel\Prompts\alert;
 
 class CouponController extends Controller
 {
@@ -48,8 +51,7 @@ class CouponController extends Controller
 
         return redirect()->route('index_coupon')->with([
             'alert' => [
-                'color' => 'success',
-                'message' => 'Updated Coupon Status '
+                'status' => $currentCoupon->status
             ]
         ]);
     }
@@ -73,8 +75,14 @@ class CouponController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Coupon $coupon)
     {
-        //
+        $coupon->delete();
+        return redirect()->route('index_coupon')->with([
+            'alert' => [
+                'color' => 'danger',
+                'message' => 'Coupon deleted'
+            ]
+        ]);
     }
 }
