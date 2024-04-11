@@ -63,7 +63,7 @@
 
                     <div class="row">
                         @forelse ($plates as $plate)
-                            <div class="col-lg-3 menu-item border rounded-3 mb-1">
+                            <div class="col-lg-3 menu-item border rounded-3 mb-1 pb-3">
                                 <button class="btn mt-2" title="EDIT"><a href="{{ route('edit_plate', $plate->id) }}"
                                         class="text-black"><i class="bi bi-pencil-square"></i></a></button>
                                 <button type="submit" class="btn mt-2" title="DELETE" data-bs-toggle="modal"

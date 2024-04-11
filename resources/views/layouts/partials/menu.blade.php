@@ -18,31 +18,10 @@
                   <li><a href="{{ route('index_plate') }}" {{-- class="{{$active}} --}}">Menu</a></li>
                   <li><a href="{{ route('index_coupon') }}">Coupons</a></li>
                   <li><a href="{{ route('index_zone') }}">Delivery Zones</a></li>
-                  <li><a href="#gallery">Gallery</a></li>
-                  <li class="dropdown"><a href="#"><span>Drop Down</span> <i
-                              class="bi bi-chevron-down dropdown-indicator"></i></a>
-                      <ul>
-                          <li><a href="#">Drop Down 1</a></li>
-                          <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                      class="bi bi-chevron-down dropdown-indicator"></i></a>
-                              <ul>
-                                  <li><a href="#">Deep Drop Down 1</a></li>
-                                  <li><a href="#">Deep Drop Down 2</a></li>
-                                  <li><a href="#">Deep Drop Down 3</a></li>
-                                  <li><a href="#">Deep Drop Down 4</a></li>
-                                  <li><a href="#">Deep Drop Down 5</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="#">Drop Down 2</a></li>
-                          <li><a href="#">Drop Down 3</a></li>
-                          <li><a href="#">Drop Down 4</a></li>
-                      </ul>
-                  </li>
-                  <li><a href="#contact">Contact</a></li>
               </ul>
           </nav><!-- .navbar -->
 
-          <a class="btn-book-a-table" href="#book-a-table">Book a Table</a>
+          <a class="btn-book-a-table" href="{{ route('index_order') }}">Order</a>
           <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
           <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 

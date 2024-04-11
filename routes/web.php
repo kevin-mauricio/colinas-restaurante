@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PlatoController;
 use App\Http\Controllers\ZoneController;
 
@@ -53,3 +54,8 @@ Route::delete('/delete-coupon/{coupon}', [CouponController::class, 'destroy'])->
 Route::get('/zones', [ZoneController::class, 'index'])->name('index_zone');
 Route::post('/store-zone', [ZoneController::class, 'store'])->name('store_zone');
 Route::delete('/delete-zone/{zone}', [ZoneController::class, 'destroy'])->name('delete_zone');
+
+/* OrderController */
+Route::get('/orders', [OrderController::class, 'index'])->name('index_order');
+Route::get('/details-order', [OrderController::class, 'detailsOrder'])->name('details_order');
+Route::post('/store-order', [OrderController::class, 'store'])->name('store_order');

@@ -9,6 +9,15 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'id_zone',
+        'name',
+        'phone',
+        'address',
+        'coupon',
+        'type'
+    ];
+
     public function users() {
         return $this->belongsTo(User::class);
     }

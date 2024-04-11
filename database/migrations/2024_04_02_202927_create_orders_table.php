@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_zone');
+            $table->string('name', 80);
+            $table->string('phone', 15)->nullable();
+            $table->string('address', 150)->nullable();
             $table->string('coupon')->nullable();
             $table->enum('type', ['delivery', 'site']);
-            $table->float('total');
+            $table->float('total')->nullable();
+            $table->boolean('status')->default(true);
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_zone')->references('id')->on('zones');
         });
     }

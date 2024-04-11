@@ -9,6 +9,13 @@ class OrderDetail extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'id_order',
+        'id_plate',
+        'units',
+        'subtotal'
+    ];
+
     public function orders() {
         return $this->belongsToMany(Order::class);
     }
