@@ -54,18 +54,24 @@
                             </tr>
                         @endforelse
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td class="text-end">Subtotal</td>
                             <td>
                                 <p>${{ number_format($subtotal, 0, ',', '.') }}</p>
                             </td>
                         </tr>
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td class="text-end">Discount</td>
                             <td>
                                 <p>${{ number_format($subtotal - $lastOrder->total, 0, ',', '.') }}</p>
                             </td>
                         </tr>
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td class="text-end">TOTAL</td>
                             <td>
                                 <p>${{ number_format($lastOrder->total, 0, ',', '.') }}</p>
