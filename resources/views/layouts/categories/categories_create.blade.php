@@ -4,7 +4,7 @@
         <div class="row g-0">
 
             <div class="col-lg-4 reservation-img"
-                style="background-image: url({{ asset('assets/img/reservation.jpg') }});" data-aos="zoom-out"
+                style="background-image: url({{asset('assets/img/reservation.jpg') }});" data-aos="zoom-out"
                 data-aos-delay="200"></div>
 
             <div class="col-lg-8 d-flex align-items-center">
