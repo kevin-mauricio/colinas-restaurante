@@ -66,8 +66,8 @@
                             <div class="col-lg-3 menu-item border rounded-3 mb-1 pb-3">
                                 <button class="btn mt-2" title="EDIT"><a href="{{ route('edit_plate', $plate->id) }}"
                                         class="text-black"><i class="bi bi-pencil-square"></i></a></button>
-                                <button type="submit" class="btn mt-2" title="DELETE" data-bs-toggle="modal"
-                                    data-bs-target="#idModalDeletePlate"><i class="bi bi-trash"></i></button>
+                                <button class="btn mt-2" title="DELETE"><a href="{{route('update_status_plate', $plate->id)}}"><i
+                                        class="bi bi-trash"></i></a></button>
                                 <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img
                                         src="{{ asset('assets/img/menu/menu-item-1.png') }}" class="menu-img img-fluid"
                                         alt=""></a>
@@ -95,8 +95,7 @@
             </div>
         @else
             <div class="col-lg-4 menu-item text-center m-auto pt-3">
-                <img src="{{ asset('assets/img/empty-plate.jpg') }}" class="menu-img img-fluid w-75"
-                    alt="no-plate">
+                <img src="{{ asset('assets/img/empty-plate.jpg') }}" class="menu-img img-fluid w-75" alt="no-plate">
                 <h2 class="p-3">No plates added</h2>
             </div><!-- Menu Item -->
         @endif

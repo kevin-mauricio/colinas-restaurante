@@ -16,7 +16,7 @@ class PlatoController extends Controller
      */
     public function index()
     {
-        $plates = Plato::all();
+        $plates = Plato::all()->where('status', true);
         $categories = Categoria::all();
         $status_all = 'active';
         return view('view_plate_list', compact('plates', 'categories', 'status_all'));
@@ -24,7 +24,10 @@ class PlatoController extends Controller
 
     public function getPlateByCategory(int $id_category)
     {
-        $plates = Plato::where('id_categoria', $id_category)->get();
+        $plates = Plato::where('id_categoria', $id_category)
+                ->where('status', true)
+                ->get();
+
         $categories = Categoria::all();
         $status = 'active';
         return view('view_plate_list', compact('plates', 'categories', 'status', 'id_category'));
@@ -83,9 +86,22 @@ class PlatoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function updateStatus(int $id)
+    {   
+        $currentPlate = Plato::findOrFail($id);
+        $currentPlate->status = $currentPlate->status = false;
+        $currentPlate->save();
+
+        return redirect()->route('index_plate')->with([
+            'alert' => [
+                'color' => 'danger',
+                'message' => 'Plate deleted'
+            ]
+        ]); // alert
+    }
     public function destroy(Plato $plate)
     {
-        $plate->delete();
+        $plate->update(['status' => false]);
         return redirect()->route('index_plate')->with([
             'alert' => [
                 'color' => 'danger',

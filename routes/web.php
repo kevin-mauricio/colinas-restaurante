@@ -41,6 +41,7 @@ Route::get('/form-create-plate', [PlatoController::class, 'createView'])->name('
 Route::post('/store-plate', [PlatoController::class, 'store'])->name('store_plate');
 Route::get('/plates-by-category/{id_category}', [PlatoController::class, 'getPlateByCategory'])->name('plate_by_category');
 Route::put('/update-plate/{plate}', [PlatoController::class, 'update'])->name('update_plate');
+Route::get('/update-status-plate/{id}', [PlatoController::class, 'updateStatus'])->name('update_status_plate');
 Route::get('/edit-plate/{plate}', [PlatoController::class, 'edit'])->name('edit_plate');
 Route::delete('/delete-plate/{plate}', [PlatoController::class, 'destroy'])->name('delete_plate');
 

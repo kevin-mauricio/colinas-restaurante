@@ -39,7 +39,7 @@
                         @forelse($currentDetails as $key => $detail)
                             <tr>
                                 <th scope="row">{{ $key + 1 }}</th>
-                                <td>{{ $detail['id_plate'] }}</td>
+                                <td>{{ $detail['nombre_plato'] }}</td>
                                 <td>{{ $detail['units'] }}</td>
                                 <td>${{ number_format($detail['subtotal'], 0, ',', '.') }}</td>
                                 @php

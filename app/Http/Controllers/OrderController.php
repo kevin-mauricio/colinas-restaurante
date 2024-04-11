@@ -17,7 +17,7 @@ class OrderController extends Controller
 
     public function index()
     {
-        $plates = Plato::all();
+        $plates = Plato::all()->where('status',true);
         $zones = Zone::all();
         $zoneSite = "";
 
@@ -91,7 +91,9 @@ class OrderController extends Controller
     public function detailsOrder()
     {
         $lastOrder = Order::latest()->first();
-        $currentDetails = OrderDetail::all()->where('id_order', $lastOrder->id);
+        $currentDetails = OrderDetail::where('id_order', $lastOrder->id)
+            ->join('platos', 'order_details.id_plate', '=', 'platos.id')
+            ->get();
 
         return view('view_details', compact('currentDetails', 'lastOrder'));
     }
